@@ -14,8 +14,58 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card color="medium">
+    <ion-card-header>
+      <ion-card-subtitle>YKS 2021</ion-card-subtitle>
+      <ion-card-title>Puanmatik</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Lütfen sizden istenilenleri giriniz.
+    </ion-card-content>
+  </ion-card>
+ <ion-list>
+
+<ion-item>
+  <ion-range min="0" max="40" color="medium" [(ngModel)]="tur" (ionChange)="hesapla(tur,mat,sos,fen)">
+      <ion-label slot="start">TUR</ion-label>
+      <ion-label slot="end">{{tur}} NET</ion-label>
+    </ion-range>
+  </ion-item>
+  
+  <ion-item>
+    <ion-range min="0" max="40" color="danger" [(ngModel)]="mat" (ionChange)="hesapla(tur,mat,sos,fen)">
+      <ion-label slot="start">MAT</ion-label>
+      <ion-label slot="end">{{mat}} NET</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="0" max="40" color="primary" [(ngModel)]="sos" (ionChange)="hesapla(tur,mat,sos,fen)">
+      <ion-label slot="start">SOS</ion-label>
+      <ion-label slot="end">{{sos}} NET</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="0" max="40" color="success" [(ngModel)]="fen" (ionChange)="hesapla(tur,mat,sos,fen)">
+      <ion-label slot="start">FEN</ion-label>
+      <ion-label slot="end">{{fen}} NET</ion-label>
+    </ion-range>
+  </ion-item>
+
+
+ </ion-list>
+  
+ <ion-card color="medium">
+  <ion-card-header>
+    <ion-card-subtitle>YKS Puan</ion-card-subtitle>
+    <ion-card-title>{{sonuc}} Puan</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+   {{sonuc > 300 ? 'Süpersin' : ''}}
+  </ion-card-content>
+</ion-card>
+  
 </ion-content>
